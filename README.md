@@ -61,7 +61,7 @@ python run.py
 - The output data can be logged in a simple .txt file. 
 - All the features can be easily enabled/disabled in the config options at the start 'run.py'
 
-<div align="center">
+<div align="left">
 <img src="https://imgur.com/Xn2hNEM.png" width=400>
 <p>Config options</p>
 </div>
