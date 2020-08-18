@@ -40,8 +40,7 @@ After img. processing: This is a handwriten example wrile as 3ood as you can.
 
 ## Installing Tesseract
 - Installing Tesseract on Windows, Ubuntu, Mac can be found here: https://github.com/tesseract-ocr/tesseract/wiki#installation
-- Python libraries and dependencies required: cv2, os, sys, datetime, textblob, spellchecker, numpy.
-- Can be easily installed via pip:
+- Python libraries and dependencies required can be installed via pip:
 ```
 pip install -r requirements.txt
 ```
@@ -61,6 +60,11 @@ python run.py
 ***Simple log:***
 - The output data can be logged in a simple .txt file. 
 - All the features can be easily enabled/disabled in the config options at the start 'run.py'
+
+<div align="center">
+<img src="https://imgur.com/Xn2hNEM.png" width=400>
+<p>Config options</p>
+</div>
 
 ***Image processing:***
 - Background noise reduction, increasing text thickness/width can increase the accuracy on bad/low light/distored images.
