@@ -1,0 +1,10 @@
+cv2
+os
+sys
+datetime
+textblob
+spellchecker
+numpy
+pytesseract
+argparse
+pillow
