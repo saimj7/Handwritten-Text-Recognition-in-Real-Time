@@ -94,13 +94,16 @@ python run.py
 
 ## Have fun!
 
-> To get started quickly (optional) ...
+> To get started/contribute quickly (optional) ...
 
 - **Option 1**
-    - 🍴 Fork this repo!
+    - 🍴 Fork this repo and pull request!
 
 - **Option 2**
-    - 👯 Clone this repo!
+    - 👯 Clone this repo:
+    ```
+    $ git clone https://github.com/saimj7/Handwritten-Text-Recognition-in-Real-Time.git  
+    ```
 
 - **Roll it!**
 
