@@ -1,10 +1,9 @@
 # Handwritten-Text-Recognition-in-Real-Time
 > Testing out HTR-OCR-Text translation using Google's Tesseract engine using live video stream (webcam) in OpenCV. Version 1.
 
-
 OCR & Text translation             |  HTR after simple image processing
 :-------------------------:|:-------------------------:
-![](https://imgur.com/Yd0uvbT.gif)  |  ![](https://imgur.com/cgXQJzJ.png)
+![](https://imgur.com/uIhjCeR.png)  |  ![](https://imgur.com/cgXQJzJ.png)
 
 - As we can see from the gif.1 above, Tesseract does a great job in recognizing standard OCR, translating different languages.
 - Coming to the handwriting recognition in gif.2, Tesseract is not accurate. The original image is 'handwritten.png' in the folder tests:
@@ -16,6 +15,11 @@ Before img. processing: This is a handwrdten example wrde os 3009{ as you can.
 - However, it certainly got better with simple image processing.
 ```
 After img. processing: This is a handwriten example wrile as 3ood as you can.
+```
+
+- With simple text correction feature (ref. [Features](#features)), notice that '3ood' turned into 'good':
+```
+After correction: This is a handwriten example wrile as good as you can.
 ```
 - Note that the model isn't trained on any handwritten data, only optimised with simple image processing.
 
@@ -59,18 +63,24 @@ python run.py
 
 ***Simple log:***
 - The output data can be logged in a simple .txt file. 
-- All the features can be easily enabled/disabled in the config options at the start 'run.py'
+- All the features can be easily enabled/disabled in the config options at the start of 'run.py'
 
-<div align="left">
-<img src="https://imgur.com/Xn2hNEM.png" width=400>
-<p>Config options</p>
-</div>
+
+Config options / Features            |  Simple log
+:-------------------------:|:-------------------------:
+![](https://imgur.com/Xn2hNEM.png)  |  ![](https://imgur.com/ce31z8p.png)
+
 
 ***Image processing:***
 - Background noise reduction, increasing text thickness/width can increase the accuracy on bad/low light/distored images.
+- Demonstrated in the gif.2 above.
 
 ***Text correction:***
 - Added a simple text corrector which tries to autocorrect the spelling mistakes.
+
+<div align="left">
+<img src="https://imgur.com/urlShd6.png" width=400>
+</div>
 
 ***Text/language translation:***
 - The source language (other than english) can be transated into english text.
@@ -82,6 +92,8 @@ python run.py
 ## References
 - https://github.com/tesseract-ocr
 - https://www.pyimagesearch.com/2020/08/03/tesseract-ocr-for-non-english-languages/
+- https://pypi.org/project/pyspellchecker/
+- https://docs.opencv.org/master/d7/dbd/group__imgproc.html
 
 
 ## Next steps
@@ -92,7 +104,7 @@ python run.py
 
 ---
 
-## Have fun!
+## Thanks for the read & have fun!
 
 > To get started/contribute quickly (optional) ...
 
