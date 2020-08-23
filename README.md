@@ -1,5 +1,5 @@
 # Handwritten-Text-Recognition-in-Real-Time
-> Testing out HTR-OCR-Text translation using Google's Tesseract engine using live video stream (webcam) in OpenCV. Version 1.
+> Testing out HTR-OCR-Text translation with Google's Tesseract engine using live video stream (webcam) in OpenCV. Version 1.
 
 OCR & Text translation             |  HTR after simple image processing
 :-------------------------:|:-------------------------:
