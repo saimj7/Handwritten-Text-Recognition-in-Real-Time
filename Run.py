@@ -1,32 +1,24 @@
-import cv2, os
+import cv2, os, argparse
+from mylib import Config
 from mylib.TesseractPython import tesseract_class
 from mylib.LogData import logger_class
 from mylib.SpellChecker import correct_sentence
 from mylib.Pre import preproc
 
-#===============================================================================
-""" CONFIG v1: RANGE OF ARCHITECTURE FEATURES BELOW
-     -you can enable or disable them- """
-#===============================================================================
-# To correct text sentences
-Correct = False
-# To save extracted text in a simple log
-Log = True
-# Text translation from foreign lang. to english
-Translate = True
-# Image processing to get better output
-ImProc = False
-#===============================================================================
-#===============================================================================
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--input", type=str, help= "-Set the path to your test video file-")
+args = vars(ap.parse_args())
 
-
+# Main class
 class LiveOCR(object):
     def __init__(self):
         ##To test on webcam
-        self.capture = cv2.VideoCapture(0)
-        ##To test on video file. NOTE: the result may vary.
-        #self.capture = cv2.VideoCapture('tests/test.mp4')
-
+        if Config.Webcam:
+            self.capture = cv2.VideoCapture(0)
+        else:
+            ##To test on a video file. NOTE: the result may vary.
+            # Place your video file in the tests folder.
+            self.capture = cv2.VideoCapture(args["input"])
         self.image_coordinates = []
         self.extract = False
         self.selected_ROI = False
@@ -111,7 +103,7 @@ class LiveOCR(object):
         output = tesseract_class.extract_ocr('data/cropped image.png')
 
         # To correct sentences
-        if Correct:
+        if Config.Correct:
             print("")
             print("With text correction:", correct_sentence(output))
             print("")
@@ -120,9 +112,9 @@ class LiveOCR(object):
         else:
             print("")
             print('Without img. processing:', output)
-            if Log:
+            if Config.Log:
                 logger_class.save_log(output)
-            if ImProc:
+            if Config.ImProc:
                 preproc.contrast(self.cropped_image)
                 proc_out = tesseract_class.extract_ocr('data/processed image.png')
                 print("")
@@ -131,9 +123,9 @@ class LiveOCR(object):
                 print('After img. processing:', proc_out)
 
         # To translate different languages
-        if Translate:
+        if Config.Translate:
             output = tesseract_class.translate_ocr('data/cropped image.png')
-            if Log:
+            if Config.Log:
                 logger_class.save_log_trans(output)
 
 

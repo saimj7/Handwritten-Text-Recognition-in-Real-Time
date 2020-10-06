@@ -30,7 +30,7 @@ After correction: This is a handwriten example wrile as good as you can.
 - A few reasons: Extracting a single frame is computationally less expensive. Use case: scanners, mobile phones etc.
 - Better stability, leading to accurate output.
 - Moreover, we can define our own region of interests in the image.
-- Boring? Let's get into the pipeline now:
+- Boring? Let's dig into the pipeline now:
 
 --- 
 
@@ -43,30 +43,35 @@ After correction: This is a handwriten example wrile as good as you can.
 
 
 ## Installing Tesseract
-- Installing Tesseract on Windows, Ubuntu, Mac can be found here: https://github.com/tesseract-ocr/tesseract/wiki#installation
+- Detailed installation of Tesseract on Windows, Ubuntu, Mac can be found here: https://github.com/tesseract-ocr/tesseract/wiki#installation
 - Python libraries and dependencies required can be installed via pip:
 ```
 pip install -r requirements.txt
 ```
 
 ## Running Inference
-- To run the demo with webcam, head into the directory/use the command: 
+- To run the demo on webcam, set ``` Webcam = True ``` in the config. options at 'mylib/Config.py'.
+- Head into the directory/use the command: 
+
 ```
 python run.py
 ```
 - The live stream should pop up. Press 'c' on your keyboard and use your mouse to drag and select the region of interest (ROI).
 - Press 'c' again and it should crop the image. 'r' to resume and 'q' to quit.
 - The cropped image then gets processed by Tesseract and output is displayed.
+- If you would like to test on a video file, set ``` Webcam = False ``` and place your file in the 'tests' folder.
+- Then run with the command: ``` python run.py -i tests/test.mp4 ```; by simply implying the path to your file.
+
 
 ## Features
 > Note: below are just for fun. Better versions should come up in the future.
 
 ***Simple log:***
 - The output data can be logged in a simple .txt file. 
-- All the features can be easily enabled/disabled in the config options at the start of 'run.py'
+- All the features can be easily enabled/disabled in the config. options. For example:
 
 
-Config options / Features            |  Simple log
+Config. options / Features            |  Simple log
 :-------------------------:|:-------------------------:
 ![](https://imgur.com/Xn2hNEM.png)  |  ![](https://imgur.com/ce31z8p.png)
 
@@ -83,17 +88,25 @@ Config options / Features            |  Simple log
 </div>
 
 ***Text/language translation:***
-- The source language (other than english) can be transated into english text.
-- Enable the translate option in run.py's config and run it. 
+- The source language (other than English) can be transated into the English text.
+- Enable the translate option in the config. and run it. 
 - After cropping, the command window asks for the source language code. For example, we enter 'deu for German' and 'swe for Swedish' (refer gif.1).
-- Language codes supported here will work: https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc#languages-and-scripts 
+- Language codes supported here should work: https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc#languages-and-scripts 
 
 
 ## References
-- https://github.com/tesseract-ocr
+
+***Main:***
+
+- Tesseract: https://github.com/tesseract-ocr
+- OpenCV Image Processing: https://docs.opencv.org/master/d7/dbd/group__imgproc.html
+- Tesseract Language Codes: https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc#languages-and-scripts
+
+***Optional:***
+
 - https://www.pyimagesearch.com/2020/08/03/tesseract-ocr-for-non-english-languages/
 - https://pypi.org/project/pyspellchecker/
-- https://docs.opencv.org/master/d7/dbd/group__imgproc.html
+
 
 
 ## Next steps
