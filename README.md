@@ -43,7 +43,7 @@ After correction: This is a handwriten example wrile as good as you can.
 
 
 ## Installing Tesseract
-- Detailed installation of Tesseract on Windows, Ubuntu, Mac can be found here: https://github.com/tesseract-ocr/tesseract/wiki#installation
+- Detailed installation of Tesseract on Windows, Ubuntu, Mac can be found [**here**](https://github.com/tesseract-ocr/tesseract/wiki#installation).
 - Python libraries and dependencies required can be installed via pip:
 ```
 pip install -r requirements.txt
@@ -91,7 +91,7 @@ Config. options / Features            |  Simple log
 - The source language (other than English) can be transated into the English text.
 - Enable the translate option in the config. and run it. 
 - After cropping, the command window asks for the source language code. For example, we enter 'deu for German' and 'swe for Swedish' (refer gif.1).
-- Language codes supported here should work: https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc#languages-and-scripts 
+- Language codes supported [**here**](https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc#languages-and-scripts) should work.
 
 
 ## References
